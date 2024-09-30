@@ -167,5 +167,7 @@ onMounted(() => {
   background-image: url("@/assets/logo.png"); /*更换logo*/
   background-repeat: no-repeat;
   background-size: contain;
+  background-color: red; /* 你想要的颜色 */
+  mix-blend-mode: multiply; /* 或其他模式 */
 }
 </style>
