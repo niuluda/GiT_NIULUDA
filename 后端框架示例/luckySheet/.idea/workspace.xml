@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="d4310d04-b2ca-4fe6-a8cc-2df1c59ceb4e" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/common/ResponseDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/model/NoticeWebsocketResp.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/utils/PakoGzipUtils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/websocket/server/NoticeWebsocket.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../前端框架示例/vue3-frame-vite/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../前端框架示例/vue3-frame-vite/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../前端框架示例/vue3-frame-vite/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../前端框架示例/vue3-frame-vite/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../前端框架示例/vue3-frame-vite/src/components/LuckySheet.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../../前端框架示例/vue3-frame-vite/src/components/LuckySheet.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../前端框架示例/vue3-frame-vite/src/views/preview/preview.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../../前端框架示例/vue3-frame-vite/src/views/preview/preview.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/controller/CostRegisterController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/controller/CostRegisterController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/controller/CostRegisterController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/controller/CostRegisterController.class" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CodeInsightWorkspaceSettings">
+    <option name="optimizeImportsOnTheFly" value="true" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="C:/Program Files/apache-maven-3.8.6" />
+        <option name="userSettingsFile" value="C:\Program Files\apache-maven-3.8.6\conf\settings.xml" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="2mjYU7Vi7C0rG3EsAZQqqxWFYvW" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/github/GiT_NIULUDA/后端框架示例/luckySheet/src/main/java/com&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;MavenSettings&quot;,
+    &quot;spring.configuration.checksum&quot;: &quot;78ee3afc5b83120c5876bcd5979aaf83&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\github\GiT_NIULUDA\后端框架示例\luckySheet\src\main\java\com" />
+      <recent name="D:\github\GiT_NIULUDA\后端框架示例\luckySheet\src\main\java\com\example" />
+      <recent name="D:\github\GiT_NIULUDA\后端框架示例\luckySheet\src\main\java\com\example\model" />
+      <recent name="D:\github\GiT_NIULUDA\后端框架示例\luckySheet\src\main\java\com\example\controller" />
+      <recent name="D:\github\GiT_NIULUDA\后端框架示例\luckySheet\src\main\resources" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\github\GiT_NIULUDA\后端框架示例\luckySheet\src\main\java" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.example.service" />
+      <recent name="com.example.service.impl" />
+      <recent name="com.example.common" />
+      <recent name="com.example.utils" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="Application" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="luckySheet" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.Application" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Spring Boot.Application" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="d4310d04-b2ca-4fe6-a8cc-2df1c59ceb4e" name="Changes" comment="" />
+      <created>1727591466366</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1727591466366</updated>
+      <workItem from="1727591468777" duration="361000" />
+      <workItem from="1727591837844" duration="6097000" />
+      <workItem from="1727656513573" duration="1672000" />
+      <workItem from="1727658381780" duration="59000" />
+      <workItem from="1727662336243" duration="7766000" />
+      <workItem from="1727701269058" duration="2373000" />
+      <workItem from="1728348343799" duration="8588000" />
+      <workItem from="1728433643735" duration="2599000" />
+      <workItem from="1728519895717" duration="688000" />
+      <workItem from="1728520594952" duration="4386000" />
+      <workItem from="1728612263362" duration="1557000" />
+      <workItem from="1728964160794" duration="4000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>

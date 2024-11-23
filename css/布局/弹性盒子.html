@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flex Example</title>
+  <style>
+    .container {
+      display: flex;
+      width: 300px;
+      border: 1px solid black;
+    }
+    .item {
+      height: 50px;
+      border: 1px solid blue;
+      margin: 5px;
+    }
+    .item-1 {
+      width: 100px;
+      flex-grow: 0; /* 不会扩展 */
+      flex-shrink: 0;
+    }
+    .item-2 {
+      width: 150px;
+      flex-grow: 0; /* 会扩展 */
+      flex-shrink: 0;
+    }
+    .item-3 {
+      width: 100px;
+      flex-grow: 0; /* 不会扩展 */
+      flex-shrink: 0;
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+  <div class="item item-1">Item 1</div>
+  <div class="item item-2">Item 2</div>
+  <div class="item item-3">Item 3</div>
+</div>
+</body>
+</html>
