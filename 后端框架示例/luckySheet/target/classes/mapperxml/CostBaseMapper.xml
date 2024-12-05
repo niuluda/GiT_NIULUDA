@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.mapper.CostBaseMapper">
+
+    <resultMap id="BaseResultMapMerge" type="com.example.model.CostBaseDto">
+        <result property="id" column="id" jdbcType="VARCHAR"/>
+        <result property="orderNo" column="order_no" jdbcType="VARCHAR"/>
+        <result property="orgId" column="org_id" jdbcType="VARCHAR"/>
+        <result property="orgName" column="org_name" jdbcType="VARCHAR"/>
+        <result property="deptId" column="dept_id" jdbcType="VARCHAR"/>
+        <result property="deptName" column="dept_name" jdbcType="VARCHAR"/>
+        <result property="bizPurposeId" column="biz_purpose_id" jdbcType="VARCHAR"/>
+        <result property="bizPurpose" column="biz_purpose" jdbcType="VARCHAR"/>
+        <result property="bizDeptCode" column="biz_dept_code" jdbcType="VARCHAR"/>
+        <result property="bizDeptName" column="biz_dept_name" jdbcType="VARCHAR"/>
+        <result property="bizType" column="biz_type" jdbcType="INTEGER"/>
+        <result property="bizName" column="biz_name" jdbcType="VARCHAR"/>
+        <result property="month" column="month" jdbcType="VARCHAR"/>
+        <result property="createTime" column="create_time" jdbcType="TIMESTAMP"/>
+        <result property="updateTime" column="update_time" jdbcType="TIMESTAMP"/>
+        <!--套餐详情-->
+        <result property="detailId" column="detail_id" jdbcType="VARCHAR"/>
+        <result property="operatorName" column="operator_name" jdbcType="VARCHAR"/>
+        <result property="packageName" column="package_name" jdbcType="VARCHAR"/>
+        <result property="flow" column="flow" jdbcType="VARCHAR"/>
+        <result property="scale" column="scale" jdbcType="INTEGER"/>
+        <result property="sort" column="sort" jdbcType="INTEGER"/>
+        <result property="amountTax" column="amount_tax" jdbcType="DECIMAL"/>
+        <result property="rateTax" column="rate_tax" jdbcType="DECIMAL"/>
+        <result property="invoiceAmount" column="invoice_amount" jdbcType="DECIMAL"/>
+    </resultMap>
+
+
+    <sql id="Base_Column_List">
+        id,order_no,org_id,biz_type,biz_name
+        org_name,dept_id,dept_name,
+        biz_purpose_id,biz_purpose,biz_dept_code,
+        biz_dept_name,month
+    </sql>
+    <!--导出查询-->
+    <sql id="Base_Column_List_Related">
+        cost.id,cost.org_id,cost.biz_type,cost.biz_name,
+        cost.org_name,cost.dept_id,cost.dept_name,cost.order_no,
+        cost.biz_purpose_id,cost.biz_purpose,cost.biz_dept_code,
+        cost.biz_dept_name,cost.month,detail.invoice_amount,detail.id detail_id,detail.package_id,'联通50元1024M套餐' package_name,
+        detail.operator_name,tax.id tax_id,tax.amount_tax,tax.rate_tax,detail.reward_tax,detail.save_accu,
+        detail.sort,detail.flow,detail.scale
+    </sql>
+    <!--手动结算查询-->
+    <sql id="Base_Column_List_Group">
+        cost.id,cost.org_id,cost.biz_type,cost.biz_name,
+        cost.org_name,cost.dept_id,cost.dept_name,cost.order_no,
+        cost.biz_purpose_id,cost.biz_purpose,cost.biz_dept_code,
+        cost.biz_dept_name,cost.month,sum(detail.invoice_amount) invoice_amount,detail.id detail_id,
+        detail.operator_name,sum(tax.amount_tax) amount_tax,tax.rate_tax
+    </sql>
+    <sql id="Base_Column_List_template">
+        cost.id,cost.org_id,cost.biz_type,cost.biz_name,
+        cost.org_name,cost.dept_id,cost.dept_name,cost.order_no,
+        cost.biz_purpose_id,cost.biz_purpose,cost.biz_dept_code,
+        cost.biz_dept_name,cost.month,detail.id detail_id,detail.operator_name,tax.id tax_id,
+        detail.sort,detail.flow,detail.package_id,detail.package_name
+    </sql>
+
+
+    <select id="selectAllSubByIds" resultType="com.example.model.CostBaseDto" resultMap="BaseResultMapMerge">
+        select
+        <include refid="Base_Column_List_Related"/>
+        from cost_base cost LEFT JOIN cost_package_details detail on
+        cost.id=detail.cost_id LEFT JOIN cost_op_tax tax on detail.id=tax.package_id
+        order by cost.id,cost.order_no,cost.org_id,cost.dept_id,cost.biz_purpose_id,cost.biz_dept_code,cost.biz_type,cost.month,detail.id,tax.id limit 40
+    </select>
+
+
+
+
+</mapper>
