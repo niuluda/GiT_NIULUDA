@@ -1,5 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import Layout from '../views/layout/mainLayout.vue'
+import Layout from '../views/layout/basicLayout.vue'
 import Home from "@/views/home/vueLight.vue";
 import IframeView from "@/views/home/iFrameView.vue";
 import LunBo01 from "@/views/home/luobo01.vue";

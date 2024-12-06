@@ -6,7 +6,7 @@
         <el-main>
           <router-view v-slot="{ Component, route }">
             <transition name="fade-transform" mode="out-in" appear>
-              <keep-alive >
+              <keep-alive>
                 <component :is="Component" :key="route.path"/>
               </keep-alive>
             </transition>
