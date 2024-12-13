@@ -25,6 +25,7 @@
  }
  .el-header{
    border-bottom: solid 1px rgb(43,47,51);
+   background-color: rgb(43,47,51);
  }
  .el-main{
    border-bottom: solid 1px rgb(43,47,51);
