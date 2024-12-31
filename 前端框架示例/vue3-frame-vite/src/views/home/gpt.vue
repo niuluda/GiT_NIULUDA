@@ -1,7 +1,7 @@
 <template>
   <div>
     <textarea v-model="userInput" placeholder="请输入您的问题"></textarea>
-    <button @click="callGPT">发送到u-- GPT</button>
+    <button @click="callGPT">发送到u-22- GPT</button>
     <div>
       <strong>GPT 回复:</strong>
       <p>{{ gptResponse }}</p>
