@@ -52,3 +52,27 @@ plsql-首选项-连接
 ```
 
 ![](images/微信截图_20250103163103.png)
+
+#### 6.配置 Windows 环境变量。
+
+ORACLE_HOME = D:\Develop\instantclient_19_8
+
+TNS_ADMIN = %ORACLE_HOME%\network\admin
+
+#### 7.**检查数据库字符集**
+
+在 PL/SQL 中，可以用以下 SQL 查询数据库的字符集：
+
+```
+SELECT * FROM NLS_DATABASE_PARAMETERS WHERE PARAMETER = 'NLS_CHARACTERSET';
+
+```
+
+NLS_LANG = SIMPLIFIED CHINESE_CHINA.AL32UTF8
+
+将 ORACLE_HOME 配置到 Path 变量中。
+
+启动 PLSQL。此时登录画面可以选择的数据库选项有刚刚配置的 test_docker_oracle
+
+登录成功，即连接成功。
+
