@@ -20,8 +20,13 @@ instantclient_12_2\network\ADMIN
 
 ```
 docker exec -it oracle11g /bin/bash
-bash-4.4$: sqlplus
+bash-4.4$: sqlplus / AS SYSDBA(不能切换root 切换了会让你输入用户名和密码)
 SQL>show parameter service_name
+输出可知数据库用户名:FREE
+
+NAME				     TYPE	 VALUE
+------------------------------------ ----------- ------------------------------
+service_names			     string	 FREE
 
 
 ```
