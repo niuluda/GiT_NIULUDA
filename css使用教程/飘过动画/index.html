@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>多条目动画示例</title>
+    <style>
+        /* 导航栏 */
+        #nav-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 50px;
+            background-color: #333;
+            color: white;
+            display: flex;
+            align-items: center;
+            padding: 0 20px;
+        }
+
+        /* 消息栏 */
+        #message-box {
+            margin-left: auto; /* 靠右对齐 */
+            padding: 5px 10px;
+            background-color: #4caf50;
+            border-radius: 5px;
+            display: none;
+        }
+
+        /* 条目 */
+        .item {
+            position: relative;
+            display: inline-block;
+            margin: 10px;
+            width: 100px;
+            height: 50px;
+            background-color: #2196f3;
+            color: white;
+            text-align: center;
+            line-height: 50px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        /* 克隆动画初始样式 */
+        .animate {
+            position: fixed;
+            z-index: 9999;
+            transition: transform 1s ease-out, opacity 1s ease-out;
+        }
+    </style>
+</head>
+<body>
+<!-- 导航栏 -->
+<div id="nav-bar">
+    导航栏
+    <div id="message-box">消息栏</div>
+</div>
+
+<!-- 条目列表 -->
+<button id="export-btn" style="margin-top: 100px;">导出全部条目</button>
+<div id="item-container">
+    <div class="item">条目1</div>
+    <div class="item">条目2</div>
+    <div class="item">条目3</div>
+    <div class="item">条目4</div>
+    <div class="item">条目5</div>
+</div>
+
+<script>
+    document.getElementById("export-btn").addEventListener("click", function () {
+        const items = document.querySelectorAll(".item");
+        const messageBox = document.getElementById("message-box");
+
+        // 获取目标位置
+        const targetRect = messageBox.getBoundingClientRect();
+
+        items.forEach((item, index) => {
+            // 获取条目的位置
+            const itemRect = item.getBoundingClientRect();
+
+            // 计算位移
+            const deltaX = targetRect.left - itemRect.left;
+            const deltaY = targetRect.top - itemRect.top;
+
+            // 克隆条目
+            const clone = item.cloneNode(true);
+            document.body.appendChild(clone);
+
+            // 设置克隆条目的初始样式
+            clone.style.position = "absolute";
+            clone.style.top = `${itemRect.top}px`;
+            clone.style.left = `${itemRect.left}px`;
+            clone.style.width = `${item.offsetWidth}px`;
+            clone.style.height = `${item.offsetHeight}px`;
+
+            // 延迟启动动画
+            setTimeout(() => {
+                clone.style.transition = `transform 1s ease-out, opacity 1s ease-out`;
+                clone.style.transform = `translate(${deltaX}px, ${deltaY}px)`;
+                clone.style.opacity = "0";
+            }, index * 200); // 每个条目延迟 200ms
+
+            // 动画结束后清理
+            clone.addEventListener(
+                "transitionend",
+                () => {
+                    clone.remove();
+                    if (index === items.length - 1) {
+                        // 显示消息栏
+                        messageBox.style.display = "block";
+                        setTimeout(() => {
+                            messageBox.style.display = "none";
+                        }, 3000);
+                    }
+                },
+                { once: true }
+            );
+        });
+    });
+</script>
+</body>
+</html>
