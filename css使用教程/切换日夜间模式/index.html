@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  <style>
+    /* 页面基础样式 */
+    body {
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: Arial, sans-serif;
+    }
+
+    #background {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw; /* 占满屏幕宽度 */
+      height: 100vh; /* 占满屏幕高度 */
+      background: linear-gradient(135deg, #ffffff 0%, #ffffff 50%, #1f1f1f 100%);
+      background-size: 200% 200%; /* 设置背景尺寸 */
+      transition: background 1s linear;
+    }
+
+    @keyframes gradient-to-dark {
+      0% {
+        background: linear-gradient(135deg, #ffffff 0%, #ffffff 50%, #1f1f1f 100%);
+      }
+      100% {
+        background: linear-gradient(135deg, #1f1f1f 0%, #1f1f1f 50%, #ffffff 100%);
+      }
+    }
+
+    @keyframes gradient-to-light {
+      0% {
+        background: linear-gradient(135deg, #1f1f1f 0%, #1f1f1f 50%, #ffffff 100%);
+      }
+      100% {
+        background: linear-gradient(135deg, #ffffff 0%, #ffffff 50%, #1f1f1f 100%);
+      }
+    }
+
+    button {
+      position: fixed;
+      z-index: 10;
+      padding: 10px 20px;
+      border: none;
+      background-color: #333;
+      color: #fff;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    button:hover {
+      background-color: #555;
+    }
+
+  </style>
+
+</head>
+<body>
+<div id="background"></div>
+<button id="change-theme">切换背景色</button>
+
+
+
+
+<script>
+  const button = document.getElementById('change-theme');
+  const background = document.getElementById('background');
+
+  let isDark = false; // 默认是白色背景
+
+  button.addEventListener('click', () => {
+    if (!isDark) {
+      // 切换到夜间模式
+      background.style.animation = 'gradient-to-dark 1s forwards';
+    } else {
+      // 切换到白天模式
+      background.style.animation = 'gradient-to-light 1s forwards';
+    }
+    isDark = !isDark; // 切换状态
+  });
+
+
+</script>
+</body>
+</html>

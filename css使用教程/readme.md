@@ -38,6 +38,76 @@
 
 如果 `Item 1` 的 `flex-grow` 为 `2`，而 `Item 2` 和 `Item 3` 为 `1`，那么 `Item 1` 会获得父容器剩余空间的两倍。
 
+`flex-grow` 是 CSS Flexbox 布局中的一个属性，用于指定 **flex 项目在父容器中多余空间的分配比例**。
+
+### 语法
+
+```css
+flex-grow: <number>;
+```
+
+- ```
+  <number>
+  ```
+
+   是一个非负数，默认值是 
+
+  ```
+  0
+  ```
+
+  。
+
+  - 如果设置为 `0`，项目不会增长（即便父容器有剩余空间）。
+  - 如果设置为正值，项目会根据该值按比例分配剩余空间。
+
+### 工作原理
+
+1. Flex 容器的所有子元素都具有 `flex-grow` 值。
+2. Flex 容器中分配多余空间时，每个子元素按其 `flex-grow` 值的比例分配空间。
+
+### 示例
+
+#### 基础示例
+
+```html
+<div style="display: flex;">
+  <div style="flex-grow: 1; background: lightblue;">Box 1</div>
+  <div style="flex-grow: 2; background: lightgreen;">Box 2</div>
+  <div style="flex-grow: 1; background: lightcoral;">Box 3</div>
+</div>
+```
+
+- 结果：
+  - **Box 1** 和 **Box 3** 将占用 1 份的剩余空间。
+  - **Box 2** 将占用 2 份的剩余空间。
+  - 总宽度按 `1 : 2 : 1` 比例分配。
+
+#### 无剩余空间时
+
+```html
+<div style="display: flex; width: 200px;">
+  <div style="flex-grow: 1; width: 100px; background: lightblue;">Box 1</div>
+  <div style="flex-grow: 1; width: 100px; background: lightgreen;">Box 2</div>
+</div>
+```
+
+- 如果 `width` 的总和已经填满父容器，则 `flex-grow` 不会生效。
+
+### 常见用途
+
+1. **动态布局调整**：让某些元素根据容器大小动态调整宽度。
+2. **自动填充剩余空间**：设置 `flex-grow: 1` 可以让子元素平分剩余空间。
+3. **比例布局**：使用不同的 `flex-grow` 值实现比例分配。
+
+### 与其他 Flexbox 属性的关系
+
+- **`flex-shrink`**：定义当空间不足时项目的缩小比例。
+- **`flex-basis`**：定义项目的初始大小。
+- **`flex`**：是 `flex-grow`、`flex-shrink` 和 `flex-basis` 的简写形式，例如：`flex: 1` 相当于 `flex-grow: 1; flex-shrink: 1; flex-basis: 0%`。
+
+
+
 ### 2. `flex-shrink` （收缩因子）
 `flex-shrink` 控制 **弹性子项**在容器空间不足时如何收缩。它决定了子项的 **收缩比例**，即当父容器空间不够时，子项会如何缩小。
 
